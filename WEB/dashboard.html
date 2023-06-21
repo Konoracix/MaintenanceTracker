@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MaintenanceTracker</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>Aktualne parametry</h1>
+  <table >
+    <tr>
+      <th>Maszyna</th>
+      <th>Temperatura</th>
+      <th>Ciśnienie</th>
+      <th>Prędkość</th>
+    </tr>
+    <tr>
+      <th>Maszyna A</th>
+      <th>75°C</th>
+      <th>120 PSI</th>
+      <th>1000 obr./min</th>
+    </tr>
+    <tr>
+      <th>Maszyna B</th>
+      <th>85°C</th>
+      <th>110 PSI</th>
+      <th>900 obr./min</th>
+    </tr>
+    <tr>
+      <th>Maszyna C</th>
+      <th>70°C</th>
+      <th>130 PSI</th>
+      <th>800 obr./min</td>
+    </tr>
+  </table>
+
+  <h1>Historia napraw, przeglądów i awarii</h1>
+    <label for="machines">Wybierz maszyne:</label>
+    <select name="machines" id="machines" onchange="submit()">
+      <optgroup label="machine1">
+        <option value="machine1repairs">historia napraw</option>
+        <option value="machine1reviews">historia przeglądów</option>
+        <option value="machine1accidents">historia awarii</option>
+      </optgroup>
+      <optgroup label="machine2">
+        <option value="machine2repairs">historia napraw</option>
+        <option value="machine2reviews">historia przeglądów</option>
+        <option value="machine2accidents">historia awarii</option>
+      </optgroup>
+      <optgroup label="machine3">
+        <option value="machine3repairs">historia napraw</option>
+        <option value="machine3reviews">historia przeglądów</option>
+        <option value="machine3accidents">historia awarii</option>
+      </optgroup>
+    </select>
+    <br><br>
+
+  <table>
+    <tr>
+      <th id="title1"></th>
+      <th id="title2"></th>
+    </tr>
+    <tr>
+      <th id="11"></th>
+      <th id="12"></th>
+    </tr>
+    <tr>
+      <th id="21"></th>
+      <th id="22"></th>
+    </tr>
+    <tr>
+      <th id="31"></th>
+      <th id="32"></th>
+    </tr>
+    <tr>
+      <th id="41"></th>
+      <th id="42"></th>
+    </tr>
+    <tr>
+      <th id="51"></th>
+      <th id="52"></th>
+    </tr>
+  </table>
+  <script src="table.js"></script>
+  <a href="accident.html"> <button id="accidentbutton">Zgłoś awarję</button></a>
+</body>
+</html>
