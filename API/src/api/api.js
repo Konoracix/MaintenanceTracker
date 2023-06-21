@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.all('/', (req, res) => {
+const users = require('./users/users')
+
+router.get('/', (req, res) => {
 	res.json({
 		message: '⛏️ MaintenanceTracker API ⛏️'
 	});
 })
+
+router.use('/users', users)
 
 module.exports = router;
