@@ -28,7 +28,8 @@ router.post('/register', async (req, res) => {
 	}
 	const createdUser = (await knex('Users').insert(user).returning('*'))[0];
 	res.json({
-		message: 'Succesfully added new user',
+		message: 'Successfully added new user',
+		createdUser
 	});
 })
 

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const users = require('./users/users')
+const machines = require('./machines/machines')
 
 router.get('/', (req, res) => {
 	res.json({
@@ -10,5 +11,6 @@ router.get('/', (req, res) => {
 })
 
 router.use('/users', users)
+router.use('/machines', machines)
 
 module.exports = router;

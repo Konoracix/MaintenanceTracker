@@ -6,7 +6,7 @@ exports.up = function(knex) {
   return knex.schema
 		.createTable('Users', (table) => {
 			table.uuid('id')
-			table.string('mail')
+			table.string('mail').unique()
 			table.string('password')
 			table.string('role')
 		})
@@ -15,14 +15,13 @@ exports.up = function(knex) {
 			table.string('name')
 			table.string('location')
 			table.boolean('state')
-			table.integer('tbs') // time between service
 			table.date('nsd') // next service date
 		})
-		.createTable('ComponentsTemperature', (table) => {
+		.createTable('ComponentsStatus', (table) => {
 			table.increments('id')
 			 table.integer('machine_id').references('id').inTable('Machine')
 			 table.string('name')
-			 table.integer('temperature')
+			 table.string('Status')
 			})
 		.createTable('Accidents', (table) => {
 			 table.increments('id')
@@ -54,7 +53,7 @@ exports.down = function(knex) {
 		.dropTable('Reviews')
 		.dropTable('Repairs')
 		.dropTable('Accidents')
-		.dropTable('ComponentsTemperature')
+		.dropTable('ComponentsStatus')
 		.dropTable('Machine')
 		.dropTable('Users')
 
